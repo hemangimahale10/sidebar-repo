@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sidebar </title>
+    <style>
+        .body{
+            margin: 0;
+            padding: 0;
+        }
+
+        .Sidebar{
+            width: 200px;
+            height: 100vh;
+            background-color: #eae6e6;
+            box-shadow: 0 0 10px 5px #696868ec;
+            visibility: hidden;
+        }
+
+        .menu-item{
+            background-color: #fff;
+            padding: 5px;
+            padding-left: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: end;
+            cursor: pointer;
+            border-radius:0 25px 25px 0;
+        }
+
+        .close-menu{
+            text-align: right;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .menu-item:hover{
+            border:0.5px solid #fdf9f9;
+            background-color: #fff;
+        }
+
+        .menu-icon{
+            font-size: 20px;
+        }
+
+        .menu-text{
+            text-decoration: none;
+            color: #000;
+            margin-left: 5px;
+        }
+
+        .pizza-menu{
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <i class="fa-solid fa-bars pizza-menu" onclick="openSidebar()" id="pizza-menu"></i>
+
+    <div class="Sidebar" id="Sidebar">
+        <div class="close-menu" onclick="closeSidebar()">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+
+        <div class="menu-item">
+            <i class="fa-solid fa-house menu-icon"></i>
+            <a href="#" class="menu-text">Home</a>
+        </div>
+
+        <div class="menu-item">
+            <i class="fa-solid fa-user menu-icon"></i>
+            <a href="#" class="menu-text">About</a>
+        </div>
+
+        <div class="menu-item">
+            <i class="fa-solid fa-id-card menu-icon" ></i>
+            <a href="#" class="menu-text">Contact</a>
+        </div>
+
+        <div class="menu-item">
+            <i class="fa-solid fa-toolbox menu-icon"></i>
+            <a href="#" class="menu-text">Preferences</a>
+        </div>
+
+        <div class="menu-item">
+            <i class="fa-sharp fa-solid fa-gear menu-icon"></i>
+            <a href="#" class="menu-text">Setting</a>
+        </div>
+
+        <div class="menu-item">
+            <i class="fa-solid fa-right-from-bracket menu-icon"></i>
+            <a href="#" class="menu-text">Logout</a>
+        </div>
+    </div>
+    
+    <script src="https://kit.fontawesome.com/10e1ccecc8.js" crossorigin="anonymous"></script>
+
+    <script>
+        function openSidebar(){
+            const SidebarElement = document.getElementById('Sidebar');
+            SidebarElement.style.visibility = 'visible';
+
+            const pizzamenuElement = document.getElementById('pizza-menu');
+            pizzamenuElement.style.visibility = 'hidden';
+        }
+
+        function closeSidebar(){
+            const SidebarElement = document.getElementById('Sidebar');       
+            SidebarElement.style.visibility = 'hidden';
+
+            const pizzamenuElement = document.getElementById('pizza-menu');
+            pizzamenuElement.style.visibility = 'visible';
+        }
+    </script>
+</body>
+</html>
